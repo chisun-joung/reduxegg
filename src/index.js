@@ -1,9 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import { createStore } from 'redux';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+
+
+const counter = (state = 0, action) => {
+    switch (action.type) {
+        case 'INCREMENT':
+            return state + 1;
+        case 'DECREMENT':
+            return state - 1;
+        default:
+            return state;
+    }
+}
+
+const store = createStore(counter);
+
+
+store.dispatch({type: 'INCREMENT'});
+console.log(store.getState());
+
+const Counter = ({value}) => (
+    <div>
+        <h1> {value} </h1>
+    </div>
 );
+
+const render = () => {
+    ReactDOM.render(
+        <Counter value={store.getState()}/>,
+        document.getElementById('root')
+    );
+};
+
+store.subscribe(render);
+render();
