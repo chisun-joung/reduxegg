@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import deepfreeze  from 'deepfreeze';
-
+import expect from 'expect';
 
 const counter = (state = 0, action) => {
     switch (action.type) {
@@ -56,8 +56,7 @@ store.subscribe(render);
 render();
 
 const addCounter = (list) => {
-    list.push(0);
-    return list;
+    return list.concat([0]);
 
 };
 
