@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
-
+import deepfreeze  from 'deepfreeze';
 
 
 const counter = (state = 0, action) => {
@@ -54,3 +54,21 @@ const render = () => {
 
 store.subscribe(render);
 render();
+
+const addCounter = (list) => {
+    list.push(0);
+    return list;
+
+};
+
+const testAddCounter = () => {
+    const listBefore = [];
+    const listAfter = [0];
+    deepfreeze(listBefore);
+    expect(
+        addCounter(listBefore)
+    ).toEqual(listAfter);
+};
+
+testAddCounter();
+console.log('All tests passed');
