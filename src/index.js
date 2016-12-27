@@ -84,6 +84,17 @@ const todos = (state = [], action) => {
                     completed: false
                 }
             ];
+        case 'TOGGLE_TODO':
+            return state.map(todo => {
+                if(todo.id !== action.id){
+                    return todo;
+                }
+
+                return {
+                    ...todo,
+                    completed: !todo.completed
+                }
+            });
         default:
             return state;
     }
@@ -114,20 +125,41 @@ const testIncrementCounter = () => {
     ).toEqual(listAfter)
 };
 const testToggleTodo = () => {
-    const todoBefore = {
-        id: 0,
-        text: 'Learn Redux',
-        completed: false
+    const stateBefore = [
+        {
+            id: 0,
+            text: 'Learn Redux',
+            completed: false
+        },
+        {
+            id: 1,
+            text: 'Going shopping',
+            completed: false
+        }
+
+    ];
+    const action = {
+        type: 'TOGGLE_TODO',
+        id: 1
     };
-    const todoAfter = {
-        id: 0,
-        text: 'Learn Redux',
-        completed: true
-    };
-    deepfreeze(todoBefore);
+    const stateAfter = [
+        {
+            id: 0,
+            text: 'Learn Redux',
+            completed: false
+        },
+        {
+            id: 1,
+            text: 'Going shopping',
+            completed: true
+        }
+
+    ];
+    deepfreeze(stateBefore);
+    deepfreeze(action);
     expect(
-        toggleTodo(todoBefore)
-    ).toEqual(todoAfter);
+        todos(stateBefore,action)
+    ).toEqual(stateAfter);
 };
 const testAddTodo = () => {
     const stateBefore = [];
