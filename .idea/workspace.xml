@@ -37,8 +37,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="160" column="32" lean-forward="false" selection-start-line="160" selection-start-column="32" selection-end-line="160" selection-end-column="32" />
+            <state relative-caret-position="540">
+              <caret line="88" column="5" lean-forward="false" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
               <folding>
                 <element signature="e#205#396#0" expanded="false" />
                 <element signature="e#510#651#0" expanded="false" />
@@ -46,11 +46,11 @@
                 <element signature="e#1149#1178#0" expanded="false" />
                 <element signature="e#1219#1308#0" expanded="false" />
                 <element signature="e#1352#1465#0" expanded="false" />
-                <element signature="e#1496#1571#0" expanded="false" />
-                <element signature="e#2253#2407#0" expanded="false" />
-                <element signature="e#2441#2614#0" expanded="false" />
-                <element signature="e#2651#2830#0" expanded="false" />
-                <element signature="e#3567#3954#0" expanded="false" />
+                <element signature="e#2315#2469#0" expanded="false" />
+                <element signature="e#2503#2676#0" expanded="false" />
+                <element signature="e#2713#2892#0" expanded="false" />
+                <element signature="e#2923#3601#0" expanded="false" />
+                <element signature="e#3629#4016#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -132,10 +132,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1217" />
-    <option name="y" value="237" />
+    <option name="x" value="1213" />
+    <option name="y" value="289" />
     <option name="width" value="1305" />
-    <option name="height" value="1146" />
+    <option name="height" value="970" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -204,9 +204,61 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="js.eslint.eslintPackage" value="$PROJECT_DIR$/node_modules/eslint" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
       <method />
     </configuration>
   </component>
@@ -225,10 +277,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6733000" />
+    <option name="totallyTimeSpent" value="8256000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1217" y="237" width="1305" height="1146" extended-state="0" />
+    <frame x="1213" y="289" width="1305" height="970" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1012461" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -238,7 +290,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32922202" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24487472" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -258,7 +310,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -321,11 +373,11 @@
             <element signature="e#1149#1178#0" expanded="false" />
             <element signature="e#1219#1308#0" expanded="false" />
             <element signature="e#1352#1465#0" expanded="false" />
-            <element signature="e#1496#1571#0" expanded="false" />
-            <element signature="e#2253#2407#0" expanded="false" />
-            <element signature="e#2441#2614#0" expanded="false" />
-            <element signature="e#2651#2830#0" expanded="false" />
-            <element signature="e#3567#3954#0" expanded="false" />
+            <element signature="e#2315#2469#0" expanded="false" />
+            <element signature="e#2503#2676#0" expanded="false" />
+            <element signature="e#2713#2892#0" expanded="false" />
+            <element signature="e#2923#3601#0" expanded="false" />
+            <element signature="e#3629#4016#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -387,8 +439,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="160" column="32" lean-forward="false" selection-start-line="160" selection-start-column="32" selection-end-line="160" selection-end-column="32" />
+        <state relative-caret-position="540">
+          <caret line="88" column="5" lean-forward="false" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
           <folding>
             <element signature="e#205#396#0" expanded="false" />
             <element signature="e#510#651#0" expanded="false" />
@@ -396,11 +448,11 @@
             <element signature="e#1149#1178#0" expanded="false" />
             <element signature="e#1219#1308#0" expanded="false" />
             <element signature="e#1352#1465#0" expanded="false" />
-            <element signature="e#1496#1571#0" expanded="false" />
-            <element signature="e#2253#2407#0" expanded="false" />
-            <element signature="e#2441#2614#0" expanded="false" />
-            <element signature="e#2651#2830#0" expanded="false" />
-            <element signature="e#3567#3954#0" expanded="false" />
+            <element signature="e#2315#2469#0" expanded="false" />
+            <element signature="e#2503#2676#0" expanded="false" />
+            <element signature="e#2713#2892#0" expanded="false" />
+            <element signature="e#2923#3601#0" expanded="false" />
+            <element signature="e#3629#4016#0" expanded="false" />
           </folding>
         </state>
       </provider>
