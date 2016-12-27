@@ -17,10 +17,6 @@ const counter = (state = 0, action) => {
 
 const store = createStore(counter);
 
-
-store.dispatch({type: 'INCREMENT'});
-console.log(store.getState());
-
 const Counter = ({
     value,
     onIncrement,
@@ -51,13 +47,31 @@ const render = () => {
         document.getElementById('root')
     );
 };
-
 store.subscribe(render);
 render();
 
 const addCounter = (list) => {
     return [...list, 0];
 
+};
+const removeCounter = (list, index) => {
+    return [
+        ...list.slice(0, index),
+        ...list.slice(index + 1)
+    ];
+};
+const incrementCounter = (list, index) => {
+    return [
+        ...list.slice(0,index),
+        list[index] + 1,
+        ...list.slice(index + 1)
+    ];
+};
+const toggleTodo = (todo) => {
+    return {
+        ...todo,
+        completed: !todo.completed
+    };
 };
 
 const testAddCounter = () => {
@@ -68,14 +82,6 @@ const testAddCounter = () => {
         addCounter(listBefore)
     ).toEqual(listAfter);
 };
-
-const removeCounter = (list, index) => {
-    return [
-        ...list.slice(0, index),
-        ...list.slice(index + 1)
-    ];
-};
-
 const testRemoveCounter = () => {
     const listBefore = [0, 10, 20];
     const listAfter = [0, 20];
@@ -84,15 +90,6 @@ const testRemoveCounter = () => {
         removeCounter(listBefore, 1)
     ).toEqual(listAfter);
 };
-
-const incrementCounter = (list, index) => {
-    return [
-        ...list.slice(0,index),
-        list[index] + 1,
-        ...list.slice(index + 1)
-    ];
-};
-
 const testIncrementCounter = () => {
     const listBefore = [0, 10, 20];
     const listAfter = [0, 11, 20];
@@ -101,7 +98,24 @@ const testIncrementCounter = () => {
         incrementCounter(listBefore, 1)
     ).toEqual(listAfter)
 };
+const testToggleTodo = () => {
+    const todoBefore = {
+        id: 0,
+        text: 'Learn Redux',
+        completed: false
+    };
+    const todoAfter = {
+        id: 0,
+        text: 'Learn Redux',
+        completed: true
+    };
+    deepfreeze(todoBefore);
+    expect(
+        toggleTodo(todoBefore)
+    ).toEqual(todoAfter);
+};
 
+testToggleTodo();
 testAddCounter();
 testRemoveCounter();
 testIncrementCounter();
