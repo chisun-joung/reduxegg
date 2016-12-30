@@ -254,15 +254,13 @@ const TodoApp = () => (
 );
 
 
-const render = () => {
-    ReactDom.render(
-        <TodoApp/>,
-        document.getElementById('root')
-    );
+ReactDom.render(
+    <TodoApp/>,
+    document.getElementById('root')
+);
 
-};
 
-store.subscribe(render);
-render();
+
+
 
 
