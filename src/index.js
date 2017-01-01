@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import { createStore, combineReducers } from 'redux';
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 
 const todo = (state, action) => {
     switch (action.type) {
@@ -38,7 +38,6 @@ const todos = (state = [], action) => {
             return state;
     }
 };
-
 const visibilityFilter = (
 state = 'SHOW_ALL',
 action
@@ -51,19 +50,16 @@ action
     }
 };
 
-
 const todoApp = combineReducers({
     todos,
     visibilityFilter
 })
-
 
 const Todo= ({
     onClick,
     completed,
     text
 }) => (
-
     <li
        onClick={onClick}
        style={{
@@ -73,7 +69,6 @@ const Todo= ({
     >
         {text}
     </li>
-
 );
 
 const TodoList = ({
@@ -110,6 +105,32 @@ const getVisibleTodos = (
             return todos;
     }
 }
+
+const mapStateToProps = (state) => {
+
+    return {
+        todos: getVisibleTodos(
+            state.todos,
+            state.visibilityFilter
+        )
+    };
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onTodoClick: (id) => {
+            dispatch({
+                type: 'TOGGLE_TODO',
+                id
+            })
+        }
+    };
+};
+
+const VisibleTodoList = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(TodoList);
+/*
 
 class VisibleTodoList extends React.Component {
     componentDidMount() {
@@ -151,6 +172,7 @@ VisibleTodoList.contextTypes = {
     store: React.PropTypes.object
 };
 
+*/
 
 let nextTodoId = 0;
 const AddTodo = ( props, {store} ) => {
@@ -177,6 +199,61 @@ AddTodo.contextTypes = {
     store: React.PropTypes.object
 };
 
+const Link = ({
+    active,
+    children,
+    onClick
+}) => {
+    if(active) {
+        return <span>{children}</span>;
+    }
+    return (
+        <a href='#'
+           onClick={e => {
+               e.preventDefault();
+               onClick();
+           }}
+        >
+            {children}
+        </a>
+    );
+};
+
+class FilterLink extends React.Component {
+    componentDidMount(){
+        const { store } = this.context;
+        this.unsubscribe = store.subscribe(() => this.forceUpdate());
+    }
+    componentWillUnmount(){
+        this.unsubscribe();
+    }
+    render() {
+        const props = this.props;
+        const { store } = this.context;
+        const state = store.getState();
+
+        return(
+            <Link
+                active={
+                    props.filter ===
+                    state.visibilityFilter
+                }
+                onClick={() =>
+                    store.dispatch({
+                        type: 'SET_VISIBILITY_FILTER',
+                        filter: props.filter
+                    })
+                }
+            >
+                {props.children}
+            </Link>
+        );
+    }
+}
+FilterLink.contextTypes = {
+    store: React.PropTypes.object
+};
+
 const Footer = () => (
     <p>
         Show:
@@ -200,63 +277,6 @@ const Footer = () => (
         </FilterLink>
     </p>
 )
-
-const Link = ({
-    active,
-    children,
-    onClick
-}) => {
-    if(active) {
-        return <span>{children}</span>;
-    }
-    return (
-        <a href='#'
-           onClick={e => {
-            e.preventDefault();
-            onClick();
-           }}
-        >
-            {children}
-        </a>
-    );
-};
-
-
-class FilterLink extends React.Component {
-    componentDidMount(){
-        const { store } = this.context;
-        this.unsubscribe = store.subscribe(() => this.forceUpdate());
-    }
-    componentWillUnmount(){
-        this.unsubscribe();
-    }
-    render() {
-        const props = this.props;
-        const { store } = this.context;
-        const state = store.getState();
-
-        return(
-            <Link
-                active={
-                    props.filter ===
-                        state.visibilityFilter
-                }
-                onClick={() =>
-                    store.dispatch({
-                        type: 'SET_VISIBILITY_FILTER',
-                        filter: props.filter
-                    })
-                }
-            >
-                {props.children}
-            </Link>
-        );
-    }
-}
-
-FilterLink.contextTypes = {
-    store: React.PropTypes.object
-};
 
 const TodoApp = () => (
             <div>
