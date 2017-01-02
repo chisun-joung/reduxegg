@@ -184,7 +184,7 @@ const addTodo = (text) => {
         text
     };
 }
-let AddTodo = ( dispatch ) => {
+let AddTodo = ( {dispatch} ) => {
     let input;
     return (
         <div>
